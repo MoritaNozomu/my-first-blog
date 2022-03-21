@@ -10,7 +10,7 @@ class Post(models.Model):   # PostはDjango Modelであることを示す
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # 他のモデルへのリンク
     title = models.CharField(max_length=200)    # 文字数制限ありのテキストを定義するフィールド
     text = models.TextField()                   # 文字数制限なし　　　　　〃
-    created_date = models.DateTimeField(default=timezone.now)    # 日付と時間のフィールド
+    create_date = models.DateTimeField(default=timezone.now)    # 日付と時間のフィールド
     published_date = models.DateTimeField(blank=True, null=True)
     
     def publish(self):
